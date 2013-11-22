@@ -1,46 +1,10 @@
-##
-# You can use other adapters like:
-#
-#   ActiveRecord::Base.configurations[:development] = {
-#     :adapter   => 'mysql2',
-#     :encoding  => 'utf8',
-#     :reconnect => true,
-#     :database  => 'your_database',
-#     :pool      => 5,
-#     :username  => 'root',
-#     :password  => '',
-#     :host      => 'localhost',
-#     :socket    => '/tmp/mysql.sock'
-#   }
-#
-ActiveRecord::Base.configurations[:development] = {
-  :adapter   => 'postgresql',
-  :database  => 'sample_blog_development',
-  :username  => 'root',
-  :password  => '',
-  :host      => 'localhost',
-  :port      => 5432
-
-}
-
-ActiveRecord::Base.configurations[:production] = {
-  :adapter   => 'postgresql',
-  :database  => 'sample_blog_production',
-  :username  => 'root',
-  :password  => '',
-  :host      => 'localhost',
-  :port      => 5432
-
-}
-
-ActiveRecord::Base.configurations[:test] = {
-  :adapter   => 'postgresql',
-  :database  => 'sample_blog_test',
-  :username  => 'root',
-  :password  => '',
-  :host      => 'localhost',
-  :port      => 5432
-
+ActiveRecord::Base.configurations[Padrino.env] = {
+  adapter:   'postgresql',
+  database:  ENV['POSTGRESQL_DATABASE'],
+  username:  ENV['POSTGRESQL_USER'],
+  password:  ENV['POSTGRESQL_PASSWORD'],
+  host:      ENV['POSTGRESQL_HOST'],
+  port:      5432
 }
 
 # Setup our logger
