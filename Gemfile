@@ -9,15 +9,16 @@ gem 'dotenv'
 
 # Component requirements
 gem 'slim'
-gem 'activerecord', '>= 3.1', :require => 'active_record'
+gem 'activerecord', '>= 3.1', require: 'active_record'
 gem 'pg'
 
 # Test requirements
 group :test do
   gem 'rspec'
-  gem 'rack-test', :require => 'rack/test'
+  gem 'rack-test', require: 'rack/test'
   gem 'factory_girl'
   gem 'database_cleaner'
+  gem 'simplecov', require: false
 end
 
 # Padrino Stable Gem

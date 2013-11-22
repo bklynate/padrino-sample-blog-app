@@ -3,3 +3,4 @@
 .env.production
 tmp
 log
+coverage
