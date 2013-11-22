@@ -7,6 +7,10 @@ module SampleBlog
 
     enable :sessions
 
+    get :index do
+      redirect url(:posts, :index)
+    end
+
     ##
     # Caching support.
     #

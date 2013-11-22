@@ -1,0 +1,10 @@
+- @title = @post.title
+
+h3
+  = @post.title
+h6
+  = "Posted #{time_ago_in_words(@post.created_at || Time.now)} ago"
+p
+  = simple_format(@post.body)
+p
+  = link_to 'View all posts', url_for(:posts, :index)
