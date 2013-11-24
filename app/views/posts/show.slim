@@ -3,7 +3,10 @@
 h3
   = @post.title
 h6
-  = "Posted #{time_ago_in_words(@post.created_at || Time.now)} ago"
+  ' Posted
+  - if @post.author
+    ' by #{@post.author}
+  ' #{time_ago_in_words(@post.created_at || Time.now)} ago
 p
   = simple_format(@post.body)
 p

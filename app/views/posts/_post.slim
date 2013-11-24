@@ -1,7 +1,10 @@
 h3
   = link_to post.title, url_for(:posts, :show, id: post)
 h6
-  = "Posted #{time_ago_in_words(post.created_at || Time.now)} ago"
+  ' Posted
+  - if post.author
+    ' by #{post.author}
+  ' #{time_ago_in_words(post.created_at || Time.now)} ago
 p
   = simple_format(post.body)
 hr
