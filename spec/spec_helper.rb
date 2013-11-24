@@ -1,5 +1,11 @@
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start do
+  # ignore padrino admin panel
+  add_filter "/admin/"
+
+  # ignore padrino admin models
+  add_filter "/models/account.rb"
+end
 
 PADRINO_ENV = 'test' unless defined?(PADRINO_ENV)
 require File.expand_path(File.dirname(__FILE__) + "/../config/boot")
