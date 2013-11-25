@@ -1,0 +1,12 @@
+padrino-sample-blog-app:
+  ruby_version: 2.0.0
+  environment: production
+  monitoring_email: smefju@ragnarson.com
+  domains:
+    - padrino-sample-blog-app.shellyapp.com
+  servers:
+    app1:
+      size: small
+      thin: 3
+      databases:
+        - postgresql
