@@ -7,6 +7,6 @@ padrino-sample-blog-app:
   servers:
     app1:
       size: small
-      thin: 3
+      thin: 5
       databases:
         - postgresql
