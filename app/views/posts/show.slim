@@ -1,13 +1,6 @@
 - @title = @post.title
 
-h3
-  = @post.title
-h6
-  ' Posted
-  - if @post.author
-    ' by #{@post.author}
-  ' #{time_ago_in_words(@post.created_at || Time.now)} ago
-p
-  = simple_format(@post.body)
+= partial 'posts/post', object: @post
+
 p
   = link_to 'View all posts', url_for(:posts, :index)
