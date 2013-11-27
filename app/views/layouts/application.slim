@@ -3,13 +3,27 @@ html
   head
     title #{@title if @title} | Padrino Sample Blog Application
     = stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css"
+    = stylesheet_link_tag "/stylesheets/style.css"
 
   body
-    .container
-      .header
-        h3.text-muted Padrino Sample Blog Application
+    #wrap
+      .container
+        .header
+          h3.text-muted Padrino Sample Blog Application
 
-    hr
+      hr
 
-    .container
-      == yield
+      .container
+        == yield
+
+      #push
+
+    #footer
+      .container
+        div.pull-left.github
+          a href='http://github.com/smt116/padrino-sample-blog-app'
+            img src='/images/GitHub-Mark-32px.png'
+            ' Source code
+        div.pull-right
+          a href='https://shellycloud.com/home'
+            img src='https://shellycloud.com/assets/badge.png'
